@@ -1,0 +1,72 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Observable o-> Observer : observers
+
+Observer <|.. Container
+
+
+Container  <--*  Proyecto : Proyecto
+Observable <|-- TrackTimer
+Container <|-- Proyecto
+Container <|-- Tarea
+Tarea "1" *-> "*" Intervalo
+
+
+
+class Clock{
++date_start : LocalDateTime
++date_end : LocalDateTime
++cuentaTiempo()
+}
+
+class TrackTimer {
+-timer : Timer
+-datetime : LocalDateTime
++startTimer()
+}
+
+Abstract Class Container {
+
+{abstract} +sumTime(duration : int)
+}
+
+class Proyecto {
++makeTask()
++makeProject()
++sumTime(duration : int)
++update()
+}
+
+class Tarea {
+-ListInterval : Intervalo
++runTask()
++stopCounting()
++sumTime(duration : int)
++startRecounting()
++update()
+}
+
+class Intervalo {
++runInterval()
++stopInterval()
+
+
+}
+
+Interface Observer{
+{abstract} +update()
+}
+
+Abstract Observable {
++addObserver (ob : Observer)
++deleteObserver(ob : Observer)
++setChanged()
++notifyObserver(arg0: Observable, arg1: Object)
+}
+
+
+
+
+
+@enduml

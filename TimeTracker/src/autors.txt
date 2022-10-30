@@ -1,0 +1,45 @@
+Marc Mejías - 1606376
+Adrià Martínez - 1604086
+
+-------------------------------------------------------------------------------------
+MAIN
+|
+|
+|-------TimeTracker
+|       |
+| < - - |
+|       |
+|       |
+| < - - |
+|       |
+|       |
+|       |
+| < - - |
+|       |
+|       |
+|       |
+|       |
+
+
+Patron de Singleton:
+public classA (){
+    private static classA instancia;
+
+    private classA () {
+        //Constructor privado
+    }
+
+    public classA getInstance() {
+    //metodo publico para utilizar i controlar el constructor siendo private
+        if instance == NULL
+            instance = new classA();
+
+        return instance;
+    }
+
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+wait(2) --> Thread.sleep(2000) //ms
+transportation = 2 + 4 s
+
