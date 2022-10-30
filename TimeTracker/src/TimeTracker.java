@@ -1,9 +1,14 @@
 import java.time.LocalDateTime;
+import java.util.Observable;
+import java.util.Timer;
 
-public class TimeTracker {
+public class TimeTracker extends Observable {
     private static TimeTracker instance;
+    private LocalDateTime dateTime;
+    private Timer timer;
     private TimeTracker(TimeTracker i) {
         this.instance = i;
+        this.dateTime = LocalDateTime.now();
     }
 
 
@@ -15,5 +20,14 @@ public class TimeTracker {
         return instance;
     }
 
+    public void startTimer() {
 
+    }
+
+    private void track() {
+        setChanged();
+        notifyObservers(dateTime);
+    }
+
+    public LocalDateTime getDateTime() { return this.dateTime; }
 }
