@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.Observable;
 public class Project extends Activity {
     private String ProjectName;
@@ -13,6 +14,6 @@ public class Project extends Activity {
 
     @Override
     public void update(Observable o, Object arg) {
-
+        LocalDateTime dateTime = ((TimeTracker) o).getDateTime();
     }
 }
